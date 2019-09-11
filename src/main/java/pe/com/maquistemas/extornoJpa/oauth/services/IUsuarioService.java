@@ -1,4 +1,4 @@
-package pe.com.maquistemas.extornoJpa.services;
+package pe.com.maquistemas.extornoJpa.oauth.services;
 
 import pe.com.maquistemas.extornoJpa.entity.MqUsuario;
 

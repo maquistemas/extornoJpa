@@ -1,4 +1,4 @@
-package pe.com.maquistemas.extornoJpa.services;
+package pe.com.maquistemas.extornoJpa.oauth.services;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,8 +15,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import pe.com.maquistemas.extornoJpa.dao.IUsuarioDao;
 import pe.com.maquistemas.extornoJpa.entity.MqUsuario;
+import pe.com.maquistemas.extornoJpa.oauth.dao.IUsuarioDao;
 
 
 @Service

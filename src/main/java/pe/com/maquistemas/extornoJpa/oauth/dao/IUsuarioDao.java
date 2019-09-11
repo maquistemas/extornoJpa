@@ -1,4 +1,4 @@
-package pe.com.maquistemas.extornoJpa.dao;
+package pe.com.maquistemas.extornoJpa.oauth.dao;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

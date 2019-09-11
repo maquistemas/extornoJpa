@@ -11,7 +11,7 @@ import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.stereotype.Component;
 
 import pe.com.maquistemas.extornoJpa.entity.MqUsuario;
-import pe.com.maquistemas.extornoJpa.services.IUsuarioService;
+import pe.com.maquistemas.extornoJpa.oauth.services.IUsuarioService;
 
 
 @Component
