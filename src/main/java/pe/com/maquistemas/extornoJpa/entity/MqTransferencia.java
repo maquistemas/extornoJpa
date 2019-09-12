@@ -44,11 +44,11 @@ public class MqTransferencia implements Serializable{
 	private MqCuenta mqcuentaDestino;
 	
 	
-	@NotNull(message="la auditoria no puede ser vacia")
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="mqAuditorias_id")
-	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-	private MqAuditoria mqAuditoria;
+//	@NotNull(message="la auditoria no puede ser vacia")
+//	@ManyToOne(fetch=FetchType.LAZY)
+//	@JoinColumn(name="mqAuditorias_id")
+//	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+//	private MqAuditoria mqAuditoria;
 	
 	
 	
@@ -105,13 +105,13 @@ public class MqTransferencia implements Serializable{
 	}
 	
 		
-	public MqAuditoria getMqAuditoria() {
-		return mqAuditoria;
-	}
-
-	public void setMqAuditoria(MqAuditoria mqAuditoria) {
-		this.mqAuditoria = mqAuditoria;
-	}
+//	public MqAuditoria getMqAuditoria() {
+//		return mqAuditoria;
+//	}
+//
+//	public void setMqAuditoria(MqAuditoria mqAuditoria) {
+//		this.mqAuditoria = mqAuditoria;
+//	}
 
 
 

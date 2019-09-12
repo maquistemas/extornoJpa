@@ -34,6 +34,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import pe.com.maquistemas.extornoJpa.entity.MqPersona;
 import pe.com.maquistemas.extornoJpa.entity.MqRegion;
+import pe.com.maquistemas.extornoJpa.oauth.services.PlSqlService;
 import pe.com.maquistemas.extornoJpa.services.IMqPersonaService;
 import pe.com.maquistemas.extornoJpa.services.IUploadFileService;
 
@@ -49,6 +50,8 @@ public class MqPersonaController {
 	
 	@Autowired
 	private IMqPersonaService personaService;
+	
+	
 	
 	
 	@GetMapping("/persona/findall")

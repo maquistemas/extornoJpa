@@ -35,3 +35,7 @@ INSERT INTO mqusuarios (id, username, password, enabled) VALUES (seq_mqusuarios.
 INSERT INTO mqusuarios_mqroles (mqusuarios_id, mqroles_id) VALUES (1, 1);
 INSERT INTO mqusuarios_mqroles (mqusuarios_id, mqroles_id) VALUES (2, 2);
 INSERT INTO mqusuarios_mqroles (mqusuarios_id, mqroles_id) VALUES (2, 1);
+
+/*insertamos cuentas*/
+INSERT INTO mqcuentas (id, saldo, mqpersonas_id) values(seq_mqcuentas.nextval, 1000, 1);
+INSERT INTO mqcuentas (id, saldo, mqpersonas_id) values(seq_mqcuentas.nextval, 2000, 2);
