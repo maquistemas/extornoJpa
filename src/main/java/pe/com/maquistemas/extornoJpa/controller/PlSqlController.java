@@ -66,5 +66,21 @@ public class PlSqlController {
 		
 	}
 	
+	@PostMapping("/suma")
+	public ResponseEntity<?> sf_suma(@RequestParam("a") Integer a, @RequestParam("b") Integer b){
+		Map<String, Object> response = new HashMap<>();
+		try {
+			Integer suma = this.plSqlService.sf_suma(a, b);
+			response.put("mensaje", "La suma se realizó con éxito");
+			response.put("suma", suma);
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
+			
+		} catch (Exception e) {
+			response.put("mensaje", "No se puedo sumar");
+			response.put("error", e.getMessage() + ": "+ e.getCause().getMessage());
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
 
 }

@@ -8,7 +8,9 @@ CREATE OR REPLACE PACKAGE PACK_TRANSACCION_MQ AS
   PAR_TRANSF_MONTO NUMBER);
                                                       
 -- SP(2) para realizar: Transacción de extorno de dinero                                                      
-  PROCEDURE SP_EXTORNO (PAR_TRANSF_ID INTEGER, PAR_USUARIO_ID INTEGER);  
+  PROCEDURE SP_EXTORNO (PAR_TRANSF_ID INTEGER, PAR_USUARIO_ID INTEGER);
+  
+  FUNCTION SF_SUMA ( a in number, b in number ) RETURN NUMBER;
 
 
 END PACK_TRANSACCION_MQ;
@@ -191,8 +193,15 @@ BEGIN
 
 END;
   
+--FUNCION SUMA
+function SF_SUMA ( a in number, b in number )
+return number
+IS
 
+BEGIN
+   return a + b ;
 
+END;
 
 
 END PACK_TRANSACCION_MQ;

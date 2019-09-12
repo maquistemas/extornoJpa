@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Types;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -90,6 +91,33 @@ public class PlSqlService implements IPlSqlService {
 			return null;
 		}
 
+	}
+
+	@Override
+	public Integer sf_suma(Integer a, Integer b) {
+		
+		Session session = em.unwrap(Session.class);
+		CallableStatement callableStatement = session.doReturningWork(new ReturningWork<CallableStatement>() {
+			@Override
+			public CallableStatement execute(Connection connection) throws SQLException {
+				CallableStatement function = connection.prepareCall("{ ? = call PACK_TRANSACCION_MQ.SF_SUMA(?,?) }");
+				function.registerOutParameter(1, Types.INTEGER);
+				function.setInt(2, a);
+				function.setInt(3, b);
+
+				function.execute();
+				return function;
+			}
+		});
+
+		try {
+			return callableStatement.getInt(1);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+
+	
 	}
 
 }
