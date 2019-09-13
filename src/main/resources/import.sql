@@ -1,15 +1,15 @@
-/*Insertamos mqregiones*/
-INSERT INTO mqregiones (id, nombre) VALUES (seq_mqregiones.nextval, 'SudamÈrica');
-INSERT INTO mqregiones (id, nombre) VALUES (seq_mqregiones.nextval, 'CentroamÈrica');
-INSERT INTO mqregiones (id, nombre) VALUES (seq_mqregiones.nextval, 'NorteamÈrica');
+Ôªø/*Insertamos mqregiones*/
+INSERT INTO mqregiones (id, nombre) VALUES (seq_mqregiones.nextval, 'Sudam√©rica');
+INSERT INTO mqregiones (id, nombre) VALUES (seq_mqregiones.nextval, 'Centroam√©rica');
+INSERT INTO mqregiones (id, nombre) VALUES (seq_mqregiones.nextval, 'Norteam√©rica');
 INSERT INTO mqregiones (id, nombre) VALUES (seq_mqregiones.nextval, 'Europa');
 INSERT INTO mqregiones (id, nombre) VALUES (seq_mqregiones.nextval, 'Asia');
 INSERT INTO mqregiones (id, nombre) VALUES (seq_mqregiones.nextval, 'Africa');
-INSERT INTO mqregiones (id, nombre) VALUES (seq_mqregiones.nextval, 'OceanÌa');
-INSERT INTO mqregiones (id, nombre) VALUES (seq_mqregiones.nextval, 'Ant·rtida');
+INSERT INTO mqregiones (id, nombre) VALUES (seq_mqregiones.nextval, 'Ocean√≠a');
+INSERT INTO mqregiones (id, nombre) VALUES (seq_mqregiones.nextval, 'Ant√°rtida');
 
 /*Insertar personas*/
-INSERT INTO mqpersonas (id, mqregiones_id, nombre, apellido, email, create_at) VALUES(seq_mqpersonas.nextval, 1, 'AndrÈs', 'Guzm·n', 'profesor@bolsadeideas.com', to_date('2018-01-01', 'yyyy-mm-dd'));
+INSERT INTO mqpersonas (id, mqregiones_id, nombre, apellido, email, create_at) VALUES(seq_mqpersonas.nextval, 1, 'Andr√©s', 'Guzm√°n', 'profesor@bolsadeideas.com', to_date('2018-01-01', 'yyyy-mm-dd'));
 INSERT INTO mqpersonas (id, mqregiones_id, nombre, apellido, email, create_at) VALUES(seq_mqpersonas.nextval, 2, 'Mr. John', 'Doe', 'john.doe@gmail.com', to_date('2018-01-02', 'yyyy-mm-dd'));
 INSERT INTO mqpersonas (id, mqregiones_id, nombre, apellido, email, create_at) VALUES(seq_mqpersonas.nextval, 4, 'Linus', 'Torvalds', 'linus.torvalds@gmail.com', to_date('2018-01-03', 'yyyy-mm-dd'));
 INSERT INTO mqpersonas (id, mqregiones_id, nombre, apellido, email, create_at) VALUES(seq_mqpersonas.nextval, 4, 'Rasmus', 'Lerdorf', 'rasmus.lerdorf@gmail.com', to_date('2018-01-04', 'yyyy-mm-dd'));
