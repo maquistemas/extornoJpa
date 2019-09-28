@@ -1,0 +1,13 @@
+CREATE OR REPLACE 
+PROCEDURE sp_get_all_mqpersonas(
+p_nombre IN U_MAQUISTEMAS.Mqpersonas.NOMBRE%TYPE,
+p_ResultSet OUT SYS_REFCURSOR ) 
+AS
+
+begin
+
+OPEN p_ResultSet FOR
+SELECT * FROM U_MAQUISTEMAS.Mqpersonas p
+WHERE p.nombre LIKE p_nombre || '%';
+
+end;

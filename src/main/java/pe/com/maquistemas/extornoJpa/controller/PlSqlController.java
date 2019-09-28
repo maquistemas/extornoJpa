@@ -2,6 +2,7 @@ package pe.com.maquistemas.extornoJpa.controller;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import pe.com.maquistemas.extornoJpa.entity.MqPersona;
 import pe.com.maquistemas.extornoJpa.oauth.services.PlSqlService;
 
 @CrossOrigin({ "http://localhost:4200" })
@@ -77,6 +79,41 @@ public class PlSqlController {
 			
 		} catch (Exception e) {
 			response.put("mensaje", "No se puedo sumar");
+			response.put("error", e.getMessage() + ": "+ e.getCause().getMessage());
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	
+	@PostMapping("/usuarios")
+	public ResponseEntity<?> fn_get_all_tb_usuario(){
+		Map<String, Object> response = new HashMap<>();
+		try {
+			//Integer suma = this.plSqlService.sf_suma(a, b);
+			response.put("mensaje", "get all usuarios");
+			response.put("usuarios", this.plSqlService.fn_get_all_tb_usuario());
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
+			
+		} catch (Exception e) {
+			response.put("mensaje", "No se puedo get all usuarios");
+			response.put("error", e.getMessage() + ": "+ e.getCause().getMessage());
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	
+	@PostMapping("/mqpersonas")
+	public ResponseEntity<?> sp_get_all_mqpersonas(@RequestParam("nombre") String nombre){
+		Map<String, Object> response = new HashMap<>();
+		try {
+			//Integer suma = this.plSqlService.sf_suma(a, b);
+			response.put("mensaje", "get all usuarios");
+			List<MqPersona> personas = this.plSqlService.sp_get_all_mqpersonas(nombre);
+			response.put("personas", personas);
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
+			
+		} catch (Exception e) {
+			response.put("mensaje", "No se puedo get all usuarios");
 			response.put("error", e.getMessage() + ": "+ e.getCause().getMessage());
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
